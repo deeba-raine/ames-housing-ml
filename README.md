@@ -6,7 +6,6 @@ Western Kentucky University
 
 ---
 
-
 ## 1. Abstract
 
 This study uses data science and machine learning techniques to predict residential property sale values using the Ames Iowa Housing dataset. The primary purpose of this study was to determine what factors influence the price of houses for sale in a specific region in Ames, Iowa. The dataset underwent the process of data wrangling, which included looking for missing values, exploratory data analysis, and feature engineering. The only variable that required imputation in this dataset was LotFrontage, which is a measurement of a house's width across the street. This column was imputed using neighborhood medians. Furthermore, a TotalSF column was feature engineered and added to the dataset to measure the whole living area, including the basement, as opposed to the previous column, which only measured above ground level.
@@ -21,7 +20,7 @@ The Ames Iowa housing dataset is real dataset that was created by the Ames City 
 
 This dataset contains information about residential homes, with an emphasis on characteristics that may affect sale prices. It includes information about each home's physical structure, such as overall quality and condition, total square footage across floors and basement, above-ground living area, and number of rooms, bathrooms, bedrooms, and kitchens. Exterior parameters such as roof style and material, exterior covering, brick veneer, and foundation type are all noted. Garage dimensions include car capacity, square space, and finish. Lot characteristics include acreage, form, configuration, and linear feet of street frontage. Finally, transaction-specific details such as sale type and sale condition give context, with the objective variable being each property's ultimate sale price in dollars.
 
-![1792261461622](image/README/1792261461622.png)
+![1792261461622](images/README/Picture1.png)
 
 This is a population dataset, meaning it contains complete housing records for the entire geographic area rather than a sampled subset. The dataset contains 82 variables/ columns and 2930 observations/ rows whereas 27 columns has null/missing values and 55 columns with nonempty values. The dataset covers a continuous time period from 2006 to 2010, which increases its reliability and enhances data quality. The variables are classified into four types: 23 nominal, 23 ordinal, 14 discrete, and 20 continuous, and they cover a wide variety of property attributes that a normal house buyer would find significant.
 
@@ -62,7 +61,7 @@ A new column "TotalSF" which stands for total square feet was added to the datas
 
 ### 5.1 Histogram
 
-![Histogram of SalePrice](Picture2.png)
+![Histogram of SalePrice](images/README/Picture2.png)
 
 This visualization shows the more houses are mid priced. The peak price for houses are around 150000.
 
@@ -70,23 +69,23 @@ The Y-axis shows the frequency of houses and the X-axis shows different price po
 
 ### 5.2 Scatter Plot
 
-![Scatter plot of above-ground living area vs. SalePrice](Picture3.png)
+![Scatter plot of above-ground living area vs. SalePrice](images/README/Picture3.png)
 
 This figure shows the areas above ground (basement not covered). This figure shows that houses that has large areas excluding the basement is leaning towards higher price, which indicates a positive relationship between living area (excluding basement) and housing price, where increases in usable above-ground space generally correspond to an increase in property value. In simple words, larger the living area of a building, the higher is the price.
 
-![Scatter plot of TotalSF (including basement) vs. SalePrice](Picture4.png)
+![Scatter plot of TotalSF (including basement) vs. SalePrice](images/README/Picture4.png)
 
 This figure is similar to the previous figure. The only difference is that instead of square foot (excluding basement), this model covers the entire square foot area including basement. This feature is the product of feature engineering I applied to. This figure shows houses with basements tend to follow a similar pricing pattern, but with a modest upward shift in value, especially for larger properties, which means housing having basements are reinforcing the observation that additional usable space relates to higher housing prices even if it is slightly. In simple words, basements do help increasing the price to some extent and is not an indifferent feature at in our dataset.
 
 ### 5.3 Matrix Plot
 
-![Correlation heatmap of top ten features vs. SalePrice](Picture5.png)
+![Correlation heatmap of top ten features vs. SalePrice](images/README/Picture5.png)
 
 The above model displays a correlation heatmap of the top ten numerical characteristics that are most closely linked to SalePrice. OverallQual (correlation ≈ 0.80) is the biggest predictor, suggesting that a home's material and finish quality are the main factors influencing its market value. Strong positive associations (0.60–0.71) are also shown by living area parameters (GrLivArea, 1stFlrSF, TotalBsmtSF), indicating that larger residences are more expensive. Furthermore, the heatmap shows that GarageCars and GarageArea have strong multicollinearity (≈0.88), indicating that these features collect redundant information. Our model selection process is informed by this graphic, which also verifies our feature selection approach. The heatmap clearly shows that **Overall Quality (OverallQual)** is the single most important feature predicting house price.
 
 ### 5.4 Box Plot Model
 
-![Box plot of SalePrice by OverallQual](Picture6.png)
+![Box plot of SalePrice by OverallQual](images/README/Picture6.png)
 
 This figure displays a box plot that illustrates the connection between SalePrice and OverallQual (Overall Quality). The plot shows a strong, monotonic positive relationship: both the median price and the whole price range rise significantly when the quality rating rises from 1 (Very Poor) to 10 (Very Excellent). The median price significantly increases between quality levels 7 and 8 (about $170,000 to $210,000) and once more between levels 8 and 9 ($210,000 to $290,000). At higher quality levels, the price spread also increases significantly, suggesting that although quality is the primary factor influencing price, additional characteristics (such as living space, garage, and basement) also affect high-end homes. Outliers are generally seen at higher quality levels, signifying exceptionally expensive residences.
 
