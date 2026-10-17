@@ -4,7 +4,7 @@ An end-to-end data science project predicting residential property sale prices u
 
 ## 📄 Full Report
 
-**[Click here to view the full 12-page analytical report (PDF)](<Ames Iowa housing dataset>)**
+**[Click here to view the full 12-page analytical report (PDF)](./Ames_Iowa_housing_dataset.pdf)**
 
 ## 📓 Notebook
 
